@@ -15,7 +15,6 @@ IGTASAMP - 简易称号系统 By IGTA褪色
 #include <a_samp>
 #include <sscanf>
 #include <izcmd>
-#include <a_http>
 
 #define COLOR_VIP 0x09F709C8
 
