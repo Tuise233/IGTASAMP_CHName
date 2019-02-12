@@ -8,7 +8,7 @@ IGTASAMP - 简易称号系统 By IGTA褪色
         请自行在scriptfiles文件夹目录下添加ch文件夹，否则使用该指令会导致服务器崩溃!!!
 
 最后修改:
-        2019.2.11 15:48
+        2019.2.12 14:53
 */
 
 
@@ -51,6 +51,7 @@ COMMAND:setch(playerid,params[]) //设置玩家称号
     GetPlayerName(strval(pid),name,sizeof(name)); //获取玩家昵称
     GetPlayerName(playerid,aname,sizeof(aname)); //获取管理员昵称
     format(files,sizeof(files),"\\ch\\%s.tuise",name);
+    format(ch,sizeof(ch),"[%s]",ch); //给管理员设置的称号字符串加上小括号[ ]
     format(string,sizeof(string),"[称号系统]管理员%s(%d)修改玩家%s(%d)称号为:%s",aname,playerid,name,strval(pid),ch);
     if(fexist(files)) //如果该玩家以前就有称号
     {
