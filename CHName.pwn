@@ -46,7 +46,7 @@ COMMAND:setch(playerid,params[]) //设置玩家称号
     new name[64],files[64],string[128],ch[64],aname[64],pid[18];
     if(!IsPlayerAdmin(playerid)) return SendClientMessage(playerid,COLOR_VIP,"[称号系统]您不是管理员");
     if(sscanf(params,"s[18]s[64]",pid,ch)) return SendClientMessage(playerid,COLOR_VIP,"[称号系统]添加一名玩家的称号:/setch [玩家ID] [称号]");
-    if(!GetPlayerName(strval(pid),name,sizeof(name))) return SendClientMessage(playerid,COLOR_VIP,"[称号系统]当前玩家不在线");
+    if(!IsPlayerConnect(playerid)) return SendClientMessage(playerid,COLOR_VIP,"[称号系统]当前玩家不在线");
     GetPlayerName(strval(pid),name,sizeof(name)); //获取玩家昵称
     GetPlayerName(playerid,aname,sizeof(aname)); //获取管理员昵称
     format(files,sizeof(files),"\\ch\\%s.tuise",name);
@@ -73,7 +73,7 @@ COMMAND:delch(playerid,params[]) //删除玩家称号
     new name[64],aname[64],string[128],files[64],pid[18];
     if(!IsPlayerAdmin(playerid)) return SendClientMessage(playerid,COLOR_VIP,"[称号系统]您不是管理员");
     if(sscanf(params,"s[18]",pid)) return SendClientMessage(playerid,COLOR_VIP,"[称号系统]删除一名玩家的称号:/setch [玩家ID]");
-    if(!GetPlayerName(strval(pid),name,sizeof(name))) return SendClientMessage(playerid,COLOR_VIP,"[称号系统]当前玩家不在线");
+    if(!IsPlayerConnect(playerid)) return SendClientMessage(playerid,COLOR_VIP,"[称号系统]当前玩家不在线");
     GetPlayerName(strval(pid),name,sizeof(name)); //获取玩家昵称
     GetPlayerName(playerid,aname,sizeof(aname)); //获取管理员昵称
     format(files,sizeof(files),"\\ch\\%s.tuise",name);
